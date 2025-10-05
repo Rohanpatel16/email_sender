@@ -75,8 +75,7 @@
         }
 
         input[type="email"],
-        input[type="text"],
-        select {
+        input[type="text"] {
             width: 100%;
             padding: 12px 15px;
             border: 2px solid #e0e0e0;
@@ -87,12 +86,31 @@
         }
 
         input[type="email"]:focus,
-        input[type="text"]:focus,
-        select:focus {
+        input[type="text"]:focus {
             outline: none;
             border-color: #667eea;
             background: white;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .checkbox-input {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #667eea;
+        }
+
+        .checkbox-label {
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600;
+            margin: 0;
         }
 
         input::placeholder {
@@ -277,12 +295,17 @@
             </div>
 
             <div class="form-group">
-                <label for="includeLink">Include Link in Email <span class="required">*</span></label>
-                <select id="includeLink" name="includeLink" required>
-                    <option value="">Select an option</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
+                <div class="checkbox-wrapper">
+                    <input 
+                        type="checkbox" 
+                        id="includeLink" 
+                        name="includeLink"
+                        class="checkbox-input"
+                    >
+                    <label for="includeLink" class="checkbox-label">
+                        Include Link in Email
+                    </label>
+                </div>
             </div>
 
             <button type="submit" class="btn-submit" id="submitBtn">
